@@ -5,7 +5,7 @@ from diffusers import StableDiffusionImg2ImgPipeline
 from gradio import Blocks, Row, Button, Image, ClearButton, UploadButton, Markdown, Column, Textbox, Slider, Tabs, TabItem, Dropdown
 
 models = ""
-def generate(image, prompt, strength = 0.75, guidance_scale =7.5):
+def generate_img2_img(image, prompt, strength = 0.75, guidance_scale =7.5):
     print(prompt)  
     pipe = StableDiffusionImg2ImgPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16)
     pipe = pipe.to("cuda")
@@ -26,7 +26,7 @@ with Blocks() as demo:
                 with Column():
                     output_im = Image(type='pil')
                     btn_cap = Button(value="Generate")
-                    btn_cap.click(generate, inputs = [webcamIm, text_input, slider_input_s, slider_input_g], outputs=[output_im])
+                    btn_cap.click(generate_img2_img, inputs = [webcamIm, text_input, slider_input_s, slider_input_g], outputs=[output_im])
                     btn_cl = ClearButton([output_im])
         with TabItem(label = 'Upload'):
             with Row():
@@ -38,7 +38,7 @@ with Blocks() as demo:
                     with Column():
                         output_im = Image(type='pil')
                         btn_cap = Button(value="Generate")
-                        btn_cap.click(generate, inputs = [up_im, text_input, slider_input_s, slider_input_g], outputs=[output_im])
+                        btn_cap.click(generate_img2_img, inputs = [up_im, text_input, slider_input_s, slider_input_g], outputs=[output_im])
                         btn_cl = ClearButton([output_im])
         with TabItem(label = 'Text'):
             with Row():
