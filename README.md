@@ -1,62 +1,46 @@
-Stable Diffusion Image Generation with Gradio
+# Gradio UI for Image Diffusion
 
-This repository contains a Python script that utilizes the Stable Diffusion model for image generation, along with a Gradio interface for easy interaction. The Stable Diffusion model is powered by the "StableDiffusionImg2ImgPipeline" from RunwayML, enabling users to transform images based on prompts and parameters.
-Table of Contents
+This project offers a user-friendly interface for experimenting with the StableDiffusionImg2ImgPipeline using the Gradio library. Users can use a webcam, upload an image, or use just text to generate transformed images based on their input.
 
-    Overview
-    Dependencies
-    Usage
-    Interface Tabs
-    Contributing
-    License
+## Table of Contents
 
-Overview
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+- [License](#license)
 
-The provided Python script offers a Gradio-powered interface to generate images using the Stable Diffusion model. The interface provides three tabs, each offering a different method of image generation:
+## Getting Started
 
-    Webcam: Capture images using your webcam and apply the Stable Diffusion transformation.
-    Upload: Upload an image from your local system and apply the transformation.
-    Text: Input a prompt to guide the image transformation based on the provided text.
+To get a local copy up and running, follow these simple steps.
 
-Users can also adjust the transformation parameters such as strength and guidance_scale to control the extent and style of the image transformation.
-Dependencies
+### Prerequisites
 
-To run the script, you'll need the following dependencies:
+- Python 3.x
+- torch
+- PIL
+- gradio
+- diffusers
 
-    Python (>= 3.6)
-    torch
-    PIL (Pillow)
-    gradio
-    diffusers (StableDiffusionImg2ImgPipeline)
-    RunwayML (for the Stable Diffusion model)
+You can install these packages using pip:
 
-You can install the required dependencies using the following command:
+```bash
+pip install torch Pillow gradio diffusers
+```
 
-pip install torch pillow gradio runway-diffusers
+## Usage
 
-Usage
+1. Clone the repository:
 
-Clone this repository to your local machine:
+```bash
+etemkocaaslan/imageGen
+```
+2. Run the main script:
+```bash
+python main.py
+```
 
-gh repo clone etemkocaaslan/imageGen
+This will launch the Gradio UI in your default web browser, where you can start interacting with the model.
 
-    Install the required dependencies as mentioned in the Dependencies section.
-    Run the Python script:
+## License
 
-python app.py
-
-    Access the Gradio interface through your web browser.
-
-Contributing
-
-Contributions to this project are welcome! If you would like to contribute enhancements or fix issues, please follow these steps:
-
-    Fork the Repository: Fork this repository by clicking the "Fork" button at the top right.
-    Create a Branch: Create a new branch for your feature or fix using a descriptive name, such as feature/new-feature or fix/issue-description.
-    Make Changes: Make your changes in the new branch and commit them.
-    Push Changes: Push the changes to your forked repository.
-    Open a Pull Request: Open a pull request (PR) to the original repository, describing the changes you've made.
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details
+Distributed under the MIT License. See `LICENSE` for more information.
