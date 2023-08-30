@@ -3,7 +3,7 @@ from PIL import Image
 import gradio as gr
 from diffusers import StableDiffusionImg2ImgPipeline, DiffusionPipeline
 from gradio import (Blocks, Row, Button, Image, ClearButton, UploadButton,
-                    Markdown, Column, Textbox, Slider, Tabs, TabItem, Dropdown)
+                    Markdown, Column, Textbox, Slider, Tabs, TabItem, Dropdown, Examples)
 import warnings
 
 # Suppress specific warnings
@@ -56,6 +56,7 @@ def create_webcam_tab():
                 generate_btn.click(generate_img_2_img, inputs=[webcam_img, text_input, slider_strength, slider_guidance],
                                    outputs=[output_img])
                 clear_btn = ClearButton([output_img])
+	
 
 
 def create_upload_tab():
